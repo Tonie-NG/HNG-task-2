@@ -22,14 +22,14 @@ router.post("/", async (req, res) => {
       result = null;
     }
 
-    res.status(201).json({
+    res.status(200).json({
       slackUsername: "tonie",
       result,
-      operation_type: operation,
+      operation_type: details.operation_type,
     });
   } catch (error) {
     console.log(error);
-    res.status(500).json(error);
+    res.status(404).json(error);
   }
 });
 
