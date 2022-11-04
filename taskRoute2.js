@@ -8,19 +8,16 @@ router.post("/", async (req, res) => {
     y: req.body.y,
   };
 
+  data = details.operation_type;
   try {
     // console.log(details);
-    if (operation_type == "addition") {
+    if (data == "addition") {
       result = details.x + details.y;
-    } else if (operation_type == "subtraction") {
+    } else if (data == "subtraction") {
       result = details.x - details.y;
-    } else if (operation_type == "multiplication") {
+    } else if (data == "multiplication") {
       result = details.x * details.y;
-    } else if (
-      operation_type !== "addition" ||
-      "subtraction" ||
-      "multiplication"
-    ) {
+    } else if (data !== "addition" || "subtraction" || "multiplication") {
       result = null;
     }
 
