@@ -12,15 +12,13 @@ router.post("/", async (req, res) => {
   operation = value[1];
   try {
     // console.log(details);
-    if (operation == "+") {
+    if (operation == "addition") {
       result = details.x + details.y;
-    } else if (operation == "-") {
+    } else if (operation == "subtraction") {
       result = details.x - details.y;
-    } else if (operation == "*") {
+    } else if (operation == "multiplication") {
       result = details.x * details.y;
-    } else if (operation == "x") {
-      result = details.x * details.y;
-    } else if (operation !== "*" || "-" || "*" || "x") {
+    } else if (operation !== "addition" || "subtraction" || "multiplication") {
       result = null;
     }
 
