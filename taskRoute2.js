@@ -16,8 +16,12 @@ router.post("/", async (req, res) => {
       result = details.x + details.y;
     } else if (operation == "-") {
       result = details.x - details.y;
-    } else if (operation == "*" || "x") {
+    } else if (operation == "*") {
       result = details.x * details.y;
+    } else if (operation == "x") {
+      result = details.x * details.y;
+    } else if (operation !== "*" || "-" || "*" || "x") {
+      result = null;
     }
 
     res.status(201).json({
