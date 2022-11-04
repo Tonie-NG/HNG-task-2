@@ -24,8 +24,8 @@ router.post("/", async (req, res) => {
 
     res.status(201).json({
       slackUsername: "tonie",
-      operation_type: details.operation_type,
       result,
+      operation_type: details.operation_type,
     });
   } catch (error) {
     console.log(error);
