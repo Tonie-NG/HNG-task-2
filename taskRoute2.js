@@ -7,13 +7,16 @@ router.post("/", async (req, res) => {
     x: req.body.x,
     y: req.body.y,
   };
+
+  value = details.operation_type.split(" ");
+  operation = value[1];
   try {
     // console.log(details);
-    if (details.operation_type == "+") {
+    if (operation == "+") {
       result = details.x + details.y;
-    } else if (details.operation_type == "-") {
+    } else if (operation == "-") {
       result = details.x - details.y;
-    } else if (details.operation_type == "*" || "x") {
+    } else if (operation == "*" || "x") {
       result = details.x * details.y;
     }
 
